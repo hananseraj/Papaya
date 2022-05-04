@@ -1,8 +1,11 @@
+enum RadioMessage {
+    message1 = 49434
+}
 namespace SpriteKind {
     export const Three = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Three, function (sprite, otherSprite) {
-	
+    game.showLongText("¿Aprender habilidad física: CORRER? ", DialogLayout.Top)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.setImage(img`
