@@ -1,5 +1,227 @@
+namespace SpriteKind {
+    export const Three = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Three, function (sprite, otherSprite) {
+	
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setImage(img`
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e . b f b 
+        f 4 4 f 4 4 f 4 4 f . f 4 f 
+        f b 4 4 e e 4 4 2 f . f 4 f 
+        . f 2 2 2 2 2 2 b b f f 4 f 
+        . f b 4 4 4 4 4 4 b b 4 b f 
+        . f 4 4 4 4 4 b 4 4 f f f . 
+        . f 4 f f f 4 f f 4 f . . . 
+        . f f . . f f . . f f . . . 
+        `)
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e . b f b 
+        f 4 4 f 4 4 f 4 4 f . f 4 f 
+        f b 4 4 e e 4 4 2 f . f 4 f 
+        . f 2 2 2 2 2 2 b b f f 4 f 
+        . f b 4 4 4 4 4 4 b b 4 b f 
+        . f 4 4 4 4 4 b 4 4 f f f . 
+        . f 4 f f f 4 f f 4 f . . . 
+        . f f . . f f . . f f . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e b f b . 
+        f 4 4 f 4 4 f 4 4 f f 4 f . 
+        f b 4 4 e e 4 4 2 b f 4 f . 
+        . f 2 2 2 2 2 2 4 b 4 b f . 
+        . f 4 4 4 4 4 4 4 f f f . . 
+        . f 4 b 4 f f f 4 f . . . . 
+        . . f f f f . . f f . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e . b f b 
+        f 4 4 f 4 4 f 4 4 f . f 4 f 
+        f b 4 4 b e 4 4 2 b f f 4 f 
+        . f 2 2 2 2 2 2 4 b b 4 b f 
+        . f 4 4 4 4 4 4 4 f f f f . 
+        . . f 4 b d f 4 f . . . . . 
+        . . . f f f f f f . . . . . 
+        `],
+    100,
+    true
+    )
+})
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        b f b . e 4 f 4 4 4 4 f 4 e 
+        f 4 f . f 4 4 f 4 4 f 4 4 f 
+        f 4 f . f 2 4 4 e e 4 4 b f 
+        f 4 f f b b 2 2 2 2 2 2 f . 
+        f b 4 b b 4 4 4 4 4 4 b f . 
+        . f f f 4 4 b 4 4 4 4 4 f . 
+        . . . f 4 f f 4 f f f 4 f . 
+        . . . f f . . f f . . f f . 
+        `],
+    100,
+    false
+    )
+    mySprite.setImage(img`
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        b f b . e 4 f 4 4 4 4 f 4 e 
+        f 4 f . f 4 4 f 4 4 f 4 4 f 
+        f 4 f . f 2 4 4 e e 4 4 b f 
+        f 4 f f b b 2 2 2 2 2 2 f . 
+        f b 4 b b 4 4 4 4 4 4 b f . 
+        . f f f 4 4 b 4 4 4 4 4 f . 
+        . . . f 4 f f 4 f f f 4 f . 
+        . . . f f . . f f . . f f . 
+        `)
+})
+controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e . b f b 
+        f 4 4 f 4 4 f 4 4 f . f 4 f 
+        f b 4 4 e e 4 4 2 f . f 4 f 
+        . f 2 2 2 2 2 2 b b f f 4 f 
+        . f b 4 4 4 4 4 4 b b 4 b f 
+        . f 4 4 4 4 4 b 4 4 f f f . 
+        . f 4 f f f 4 f f 4 f . . . 
+        . f f . . f f . . f f . . . 
+        `],
+    100,
+    false
+    )
+    mySprite.setImage(img`
+        e e e . . . . e e e . . . . 
+        c 4 4 c . . c 4 4 c . . . . 
+        c b 4 4 f f 4 4 b c . . . . 
+        c 3 b 4 4 b 4 b 3 c . . . . 
+        f b 3 4 4 4 4 3 b f . . . . 
+        e 4 4 4 4 4 4 4 4 e . . . . 
+        e 4 f 4 4 4 4 f 4 e . b f b 
+        f 4 4 f 4 4 f 4 4 f . f 4 f 
+        f b 4 4 e e 4 4 2 f . f 4 f 
+        . f 2 2 2 2 2 2 b b f f 4 f 
+        . f b 4 4 4 4 4 4 b b 4 b f 
+        . f 4 4 4 4 4 b 4 4 f f f . 
+        . f 4 f f f 4 f f 4 f . . . 
+        . f f . . f f . . f f . . . 
+        `)
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setImage(img`
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        b f b . e 4 f 4 4 4 4 f 4 e 
+        f 4 f . f 4 4 f 4 4 f 4 4 f 
+        f 4 f . f 2 4 4 e e 4 4 b f 
+        f 4 f f b b 2 2 2 2 2 2 f . 
+        f b 4 b b 4 4 4 4 4 4 b f . 
+        . f f f 4 4 b 4 4 4 4 4 f . 
+        . . . f 4 f f 4 f f f 4 f . 
+        . . . f f . . f f . . f f . 
+        `)
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        b f b . e 4 f 4 4 4 4 f 4 e 
+        f 4 f . f 4 4 f 4 4 f 4 4 f 
+        f 4 f . f 2 4 4 e e 4 4 b f 
+        f 4 f f b b 2 2 2 2 2 2 f . 
+        f b 4 b b 4 4 4 4 4 4 b f . 
+        . f f f 4 4 b 4 4 4 4 4 f . 
+        . . . f 4 f f 4 f f f 4 f . 
+        . . . f f . . f f . . f f . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        . b f b e 4 f 4 4 4 4 f 4 e 
+        . f 4 f f 4 4 f 4 4 f 4 4 f 
+        . f 4 f b 2 4 4 e e 4 4 b f 
+        . f b 4 b 4 2 2 2 2 2 2 f . 
+        . . f f f 4 4 4 4 4 4 4 f . 
+        . . . . f 4 f f f 4 b 4 f . 
+        . . . . f f . . f f f f . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . e e e . . . . e e e 
+        . . . . c 4 4 c . . c 4 4 c 
+        . . . . c b 4 4 f f 4 4 b c 
+        . . . . c 3 b 4 b 4 4 b 3 c 
+        . . . . f b 3 4 4 4 4 3 b f 
+        . . . . e 4 4 4 4 4 4 4 4 e 
+        b f b . e 4 f 4 4 4 4 f 4 e 
+        f 4 f . f 4 4 f 4 4 f 4 4 f 
+        f 4 f f b 2 4 4 e b 4 4 b f 
+        f b 4 b b 4 2 2 2 2 2 2 f . 
+        . f f f f 4 4 4 4 4 4 4 f . 
+        . . . . . f 4 f d b 4 f . . 
+        . . . . . f f f f f f . . . 
+        `],
+    100,
+    true
+    )
+})
+let mySprite: Sprite = null
 scene.setBackgroundImage(img`
-    9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -68,6 +290,7 @@ scene.setBackgroundImage(img`
     7766777776776666767767766676667777666776776776677777767766677677677667666677776677667767766777777677666767776776676667777766776776677667777766776667677677766766
     66667776767666667b776776bb766677b7666676776766677776767666677b776776b7666677b766676677676667776676766667b7776776b7666777b766676776676667776766766667b7767776b766
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbeebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbeebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     eebbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbbbbebbbbbbbbbbbbbbbbbbbeebbbbbb
@@ -120,7 +343,7 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     e e e . . . . e e e . . . . 
     c 4 4 c . . c 4 4 c . . . . 
     c b 4 4 f f 4 4 b c . . . . 
@@ -136,4 +359,43 @@ let mySprite = sprites.create(img`
     . f 4 f f f 4 f f 4 f . . . 
     . f f . . f f . . f f . . . 
     `, SpriteKind.Player)
-mySprite.setPosition(20, 61)
+mySprite.setPosition(40, 62)
+controller.moveSprite(mySprite, 50, 0)
+scene.cameraFollowSprite(mySprite)
+let Three = sprites.create(img`
+    ................................
+    ............f...................
+    ............8f..8..f.......ff...
+    ......f......8..f..f....fff.....
+    .....8......f8..f.f....ff.......
+    fff..8f.....f8..f.f...ff..ff....
+    ...f8f8f....f8f..8....88...f....
+    .....ff8f....ff..88..f8....8f...
+    .......f88...fff.f8f.8f....ff...
+    .......fffff..ff..ff.8f...88fff.
+    .........ff8f.fff.ff88f..f8ff...
+    ...........fffffff.f8f..ffff....
+    ....88888f..ffffffffff.f8f......
+    ...f....f8ff88fffff8fffff.......
+    ...f......8fff88fffff88f........
+    ..............f88fffffff........
+    ...............88ffffff.........
+    ...............f88ffff..........
+    ................88ffff..........
+    ................88fff...........
+    ................88fff...........
+    ................88fff...........
+    ................88fff...........
+    ................88fff...........
+    ................88fff...........
+    ...............f8ffff...........
+    ...............88ffff...........
+    ..............888fffff..........
+    .............f8fffffff..........
+    .........f88f88f.fffffff........
+    ......8ff8f.fff..f8f.ff.ff......
+    ....f8f....f......f...fff.ffff..
+    `, SpriteKind.Three)
+Three.setPosition(10, 42)
+Three.changeScale(1, ScaleAnchor.Middle)
+tiles.setCurrentTilemap(tilemap`level1`)
